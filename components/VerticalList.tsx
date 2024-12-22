@@ -100,11 +100,18 @@ const VerticalList = ({ data }: VerticalListProp) => {
   });
 
   return (
+    // <View  if we apply style like this the whole flatlist will move down and my desired effect will to show card in the middle will not come that is why we put this style in the content container style
+    //   style={{
+    //     paddingHorizontal: _spacing * 3,
+    //     paddingVertical: (height - _itemFullSize) / 2,
+    //     gap: _spacing * 2,
+    //   }}
+    // >
     <Animated.FlatList
       data={data}
       contentContainerStyle={{
         paddingHorizontal: _spacing * 3,
-        marginTop: (height - _itemFullSize) / 2,
+        paddingVertical: (height - _itemFullSize) / 2,
         gap: _spacing * 2,
       }}
       renderItem={({ item, index }) => (
